@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="stylesheet" href="css/styleht.css"/>
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="VVVuuu">
+        <div id="app"></div>
+    </div>
+    
+        
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+     new Vue({
+        el:"#app",
+        template:'<div> <ul v-for="(item ,position) in menuList"> <h1>{{position}}</h1> <h2>{{item.name}}</h2>  <h3>{{item.price}}</h3>  </ul>   <ul v-for="(value,key) in object">{{value}}==>{{key}}  </ul>   </div>',
+        
+
+
+        data:function () {
+            return{
+                msg1:1==1,
+                msg2:'士大夫交换机和附近的v经典剧的剧集大家',
+                // msg3:{1 > 2 ? '真的'：'假的' },
+                isShow:false,
+                menuList:[
+                {id:1,name:'aaa',price:20},
+                {id:2,name:'bbb',price:30},
+                {id:3,name:'ccc',price:40},
+                ],
+                object:{
+                    name:'Tom',
+                    age:30,
+                    fav:'唱歌',
+                }
+
+            }
+        }
+     })
+
+
+
+
+</script>

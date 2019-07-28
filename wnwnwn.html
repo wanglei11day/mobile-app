@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    
+    <link rel="stylesheet" href="css/styleht.css"/>
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <style type="text/css">
+        
+
+    .po{
+        color: green;
+    }
+
+    .activity{
+        color: red;
+    }
+
+    </style>
+
+   
+
+
+</head>
+<body>
+    <div class="wwwuuu">
+        <div id="app">
+            <input type="button" value="狼起来" v-on:click="lang">
+            <input type="button" value="低调" v-on:click="stop">
+            <input type="button" value="zengjia" v-on:click="stopped">
+
+            <h4>{{msg1}}</h4>
+
+
+
+            <p v-if="seen">现在你看到我了</p>
+
+
+            <ol>
+                <li v-for="todo in todos">
+                {{ todo.text }}
+                </li>
+            </ol>
+
+
+            <ul>
+                <todo-item
+                    v-for="item in groceryList"
+                  v-bind:todo="item"
+                  v-bind:key="item.id"
+                ></todo-item>
+            </ul>
+
+
+
+        </div>
+
+    </div>
+    
+      
+  
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+
+    
+new Vue({
+    el:"#app",
+    
+    data:{
+        mytitle:'21254dkdsjjh',
+        msg1:'还富含淀粉和繁华和方法工会会费',
+        intervalid:null,
+        seen:true,
+        todos: [
+      { text: '学习 JavaScript' },
+      { text: '学习 Vue' },
+      { text: '整个牛项目' }
+    ],
+    groceryList: [
+      { id: 0, text: '蔬菜' },
+      { id: 1, text: '奶酪' },
+      { id: 2, text: '随便其它什么人吃的东西' }
+    ]
+        
+    },
+    methods:{
+        lang(){
+
+           intervalid= setInterval( ()=> {
+                // body...
+
+                console.log(this.msg1)
+            var start=this.msg1.substring(0,1);
+             console.log(start)
+             var end=this.msg1.substring(1);
+             this.msg1=end+start;
+
+
+            },400)
+
+
+
+            
+        },
+        stop(){
+            clearInterval();
+        },
+        stopped(){
+            this.todos.push({text:'1111'});
+        }
+    }
+})
+
+
+
+// document.getElementById('btn').onclick=function () {
+//     // body...
+//     alert("111")
+// }
+
+
+</script>
